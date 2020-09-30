@@ -98,6 +98,6 @@ Using the HTMLRewriter, target the `title` tag and update the text inside to you
 
 3. Change the background color:
 
-Using HTMLRewriter, target the `body` element and change the background color. You can simply swap out the `bg-gray-800` class with another class from [Tailwind CSS's color palette](https://tailwindcss.com/docs/customizing-colors), or set a `background-color` style to a color, gradient, or image of your choice.
+Using HTMLRewriter, target the `body` element and change the background color. You can simply swap out the `bg-gray-900` class with another class from [Tailwind CSS's color palette](https://tailwindcss.com/docs/customizing-colors), or set a `background-color` style to a color, gradient, or image of your choice.
 
 4. Do the [Systems Assignment](https://github.com/cloudflare-hiring/cloudflare-2020-systems-engineering-assignment) that depends on the work you've done here.
