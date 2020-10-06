@@ -79,7 +79,7 @@ Ensure that the correct `Content-type` header is set for this page, allowing it 
 
 Once you've completed the code for this project, you can deploy it using `wrangler publish`. Follow our Quick Start guide to learn how to deploy Workers applications. You should submit both the JSON API URL and your deployed webpage for grading.
 
-#### Return the transformed HTML page from the Worker
+#### Add a link to your deployed worker to your repo
 
 Create a URL.txt that contains one line in it with the URL of your page.  For example if my assignment was deployed at https://myassignment.mydomain.com/ I would put the following in URL.txt:
 
