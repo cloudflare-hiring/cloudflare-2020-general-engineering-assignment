@@ -81,9 +81,8 @@ Once you've completed the code for this project, you can deploy it using `wrangl
 
 #### Return the transformed HTML page from the Worker
 
-Create a URL.txt that contains one line in it with the URL of your page.  For example if my assignment was deployed at https://myassignment.mydomain.com/ I would put the following in URL.txt.
+Create a URL.txt that contains one line in it with the URL of your page.  For example if my assignment was deployed at https://myassignment.mydomain.com/ I would put the following in URL.txt:
 
-URL.txt
 ```
 https://myassignment.mydomain.com/
 ```
