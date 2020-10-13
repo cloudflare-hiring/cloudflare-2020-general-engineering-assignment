@@ -1,1 +1,1 @@
-https://mydeployedworker.mydomain.com <- replace everything in this file with a single link to your deployed worker.
+https://royal-wave-87eb.manishagupta2612.workers.dev/
