@@ -1,0 +1,7 @@
+name = "cloudflare-assignment-f2020"
+type = "webpack"
+account_id = ""
+workers_dev = true
+route = ""
+zone_id = ""
+webpack_config = "webpack.config.js"
