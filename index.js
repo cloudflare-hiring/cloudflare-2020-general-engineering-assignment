@@ -81,6 +81,18 @@ class SocialTransformer {
     }
 }
 
+class PageTransformer {
+    async element(element) {
+        if (element) {
+            if (element.tagName === "body") {
+                element.setAttribute("class", "bg-red-800");
+            } else if (element.tagName === "title") {
+                element.setInnerContent("Yaswanth's Page");
+            }
+        }
+    }
+}
+
 const linkTransformer = new HTMLRewriter().on('div#links', new LinkTransformer(linksArray));
 
 const profileTransformer = new HTMLRewriter().on('div#profile', new ProfileTransformer());
@@ -88,6 +100,9 @@ const profileImageTransformer = new HTMLRewriter().on('img#avatar', new ProfileT
 const profileNameTransformer = new HTMLRewriter().on('h1#name', new ProfileTransformer());
 
 const socialTransformer = new HTMLRewriter().on('div#social', new SocialTransformer(socialLinks));
+
+const pageTransformer = new HTMLRewriter().on('body', new PageTransformer());
+const titleTransformer = new HTMLRewriter().on('title', new PageTransformer());
 
 async function getStaticPage() {
     let staticPage = await fetch('https://static-links-page.signalnerve.workers.dev')
@@ -104,6 +119,9 @@ async function getStaticPage() {
     staticPage = profileNameTransformer.transform(staticPage);
 
     staticPage = socialTransformer.transform(staticPage);
+
+    staticPage = pageTransformer.transform(staticPage);
+    staticPage = titleTransformer.transform(staticPage);
 
     return staticPage;
 }
