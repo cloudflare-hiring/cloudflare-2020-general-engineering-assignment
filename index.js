@@ -18,7 +18,16 @@ async function handleRequest(request) {
             headers: { 'content-type': 'application/json' },
         });
     }
-    return new Response('Hello worker!', {
-        headers: { 'content-type': 'text/plain' },
-    });
+    return getStaticPage();
+}
+
+async function getStaticPage() {
+    let staticPage = await fetch('https://static-links-page.signalnerve.workers.dev')
+        .then((response) => {
+            if (response.status == 200) {
+                return response;
+            } else new Response('Something went wrong!', { status: 500 });
+        })
+
+    return staticPage;
 }
