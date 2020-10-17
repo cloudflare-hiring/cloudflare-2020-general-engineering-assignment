@@ -1,5 +1,5 @@
 name = "yaswanth-engineering-assessment"
-type = "javascript"
+type = "webpack"
 account_id = ""
 workers_dev = true
 route = ""
