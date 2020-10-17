@@ -4,6 +4,11 @@ const linksArray = [
     { "name": "Mozilla", "url": "https://www.mozilla.org/" }
 ]
 
+const socialLinks = [
+    { "name": "GitHub", "url": "https://github.com/yashbellam97", "svgUrl": "https://simpleicons.org/icons/github.svg" },
+    { "name": "LinkedIn", "url": "https://www.linkedin.com/in/yashbellam97/", "svgUrl": "https://simpleicons.org/icons/linkedin.svg" }
+]
+
 addEventListener('fetch', event => {
     event.respondWith(handleRequest(event.request))
 })
@@ -55,11 +60,34 @@ class ProfileTransformer {
     }
 }
 
+class SocialTransformer {
+    constructor(links) {
+        this.links = links;
+    }
+
+    async element(element) {
+        if (element) {
+            element.removeAttribute("style");
+            let text = '\n';
+            this.links.forEach((link) => {
+                text += '<a href="';
+                text += link.url;
+                text += '">';
+                text += '\n<img style="filter:invert(100%);" src="' + link.svgUrl + '" alt="' + link.name + '">';
+                text += '</a>\n'
+            })
+            element.setInnerContent(text, { html: true });
+        }
+    }
+}
+
 const linkTransformer = new HTMLRewriter().on('div#links', new LinkTransformer(linksArray));
 
-const profileTransformer = new HTMLRewriter().on('div#profile', new ProfileTransformer(linksArray));
+const profileTransformer = new HTMLRewriter().on('div#profile', new ProfileTransformer());
 const profileImageTransformer = new HTMLRewriter().on('img#avatar', new ProfileTransformer());
 const profileNameTransformer = new HTMLRewriter().on('h1#name', new ProfileTransformer());
+
+const socialTransformer = new HTMLRewriter().on('div#social', new SocialTransformer(socialLinks));
 
 async function getStaticPage() {
     let staticPage = await fetch('https://static-links-page.signalnerve.workers.dev')
@@ -74,6 +102,8 @@ async function getStaticPage() {
     staticPage = profileTransformer.transform(staticPage);
     staticPage = profileImageTransformer.transform(staticPage);
     staticPage = profileNameTransformer.transform(staticPage);
+
+    staticPage = socialTransformer.transform(staticPage);
 
     return staticPage;
 }
