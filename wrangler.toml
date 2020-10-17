@@ -1,0 +1,10 @@
+name = "linktree-style-worker"
+type = "javascript"
+account_id = "252cb2a23c16a0f6e3ddd8568ce45f0d"
+workers_dev = true
+
+[dev]
+port=8080
+
+[prod]
+port=8080
