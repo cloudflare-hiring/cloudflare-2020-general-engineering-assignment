@@ -1,0 +1,5 @@
+name = "linktree-web"
+type = "webpack"
+account_id = "1a957661e702c548d83973f4859df6c7"
+workers_dev = true
+
