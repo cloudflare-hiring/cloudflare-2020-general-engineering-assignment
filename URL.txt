@@ -1,1 +1,2 @@
-https://mydeployedworker.mydomain.com <- replace everything in this file with a single link to your deployed worker.
+https://neelanshi.sharmaneelanshi.workers.dev/  
+Link to my deployed worker.
