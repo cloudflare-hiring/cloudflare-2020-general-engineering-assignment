@@ -1,1 +1,1 @@
-https://mydeployedworker.mydomain.com <- replace everything in this file with a single link to your deployed worker.
+https://cloudflare-3def.aakash-rastogi-05.workers.dev <- replace everything in this file with a single link to your deployed worker.
