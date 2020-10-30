@@ -1,1 +1,1 @@
-https://broken-shadow-ea50.chlin6016.workers.dev/
+https://my-worker.chlin6016.workers.dev
