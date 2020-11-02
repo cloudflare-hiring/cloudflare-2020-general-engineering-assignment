@@ -1,2 +1,1 @@
-https://my-worker.shantanu.workers.dev/links 
 https://my-worker.shantanu.workers.dev/
