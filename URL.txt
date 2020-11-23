@@ -1,1 +1,1 @@
-https://mydeployedworker.mydomain.com <- replace everything in this file with a single link to your deployed worker.
+https://my-app.bbekgupta.workers.dev/ <- replace everything in this file with a single link to your deployed worker.
